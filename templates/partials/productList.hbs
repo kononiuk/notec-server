@@ -1,0 +1,21 @@
+{{#if products}}
+<ul class="products-list grid grid-cols-4 gap-8 max-w-7xl px-5 mx-auto">
+  {{#each products}}
+    <li class="mb-2 p-4 bg-neutral-100 rounded">
+      <div class="product flex flex-col text-center">
+        <a href="{{this.url}}">{{this.name}}</a>
+        <span class="price">{{this.displayPrice}}</span>
+        <div class="actions w-full">
+          {{#if inStock}}
+          <button class="mx-auto text-center bg-zinc-700 hover:bg-zinc-500 text-white font-bold py-2 px-4 rounded"><span>Add to cart</span></button>
+          {{else}}
+          <span class="font-bold block py-2 px-4">Out of stock</span>
+          {{/if}}
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+{{else}}
+<p class="text-bold text-xl text-center">No products were found</p>
+{{/if}}

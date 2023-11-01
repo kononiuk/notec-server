@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>head}}
+<body>
+  <div class="page-wrapper flex flex-col items-stretch min-h-screen">
+    {{>header}}
+    <div class="main-content grow flex flex-col items-center">
+      <h2 class="text-4xl font-semibold mt-10 mb-6 text-center">{{ product.name }}</h2>
+      <span class="text-m italic mb-4">SKU: {{ product.sku }}</span>
+      <span class="text-xl text-semibold mb-4">
+        {{#if product.inStock}}
+        <span class="text-green-600">In stock</span>
+        {{else}}
+        <span class="text-red-600">Out of stock</span>
+        {{/if}}
+      </span>
+      <span class="text-2xl text-bold mb-4">{{ product.displayPrice }}</span>
+      <div class="actions">
+        {{#if product.inStock}}
+        <button class="mx-auto text-center bg-zinc-700 hover:bg-zinc-500 text-white font-bold py-2 px-4 rounded"><span>Add to cart</span></button>
+        {{else}}
+        <span class="font-bold block py-2 px-4">Out of stock</span>
+        {{/if}}
+      </div>
+    </div>
+    {{>footer}}
+  </div>
+</body>
+</html>
