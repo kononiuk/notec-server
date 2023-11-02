@@ -47,7 +47,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/notec.git
+   git clone https://github.com/yourusername/notec-server.git
 
 2. Navigate to the project directory:
 
