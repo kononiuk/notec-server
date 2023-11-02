@@ -1,6 +1,6 @@
-# Notec (Nodejs Tiny e-Commerce)
+# Notec (Nodejs Tiny e-Commerce) NodeJS + MongoDB server side
 
-Notec is a Node.js application built using Express and Mongoose for managing an e-commerce platform. It provides an HTML version and HTTP endpoints for getting and managing categories and products. There is a possibility for adding and removing admin users via the terminal. The application implements basic authentication using an admin email and password for securing requests, except for getting categories and products.
+Server side for [Notec project](https://github.com/kononiuk/notec). It provides an HTML version and HTTP endpoints for getting and managing categories and products. There is a possibility for adding and removing admin users via the terminal. The application implements basic authentication using an admin email and password for securing requests, except for getting categories and products.
 
 ## Table of Contents
 
@@ -47,7 +47,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/notec-server.git
+   git clone https://github.com/yourusername/notec.git
 
 2. Navigate to the project directory:
 
