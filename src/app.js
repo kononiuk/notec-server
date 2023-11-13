@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 
 // Create a custom CORS middleware that allows requests only from localhost
-const allowedOrigins = ['http://localhost:8080','https://app.notec.store']
+const allowedOrigins = ['https://app.notec.store','https://react.notec.store']
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
