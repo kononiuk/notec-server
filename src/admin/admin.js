@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')({ sigint: true })
-const adminHelper = require('../helpers/admin')
+const adminHelper = require('../utils/admin')
 const mongoose = require('mongoose')
 
 // Connect to the MongoDB database using the MONGODB_URL from environment variables
