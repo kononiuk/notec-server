@@ -1,7 +1,7 @@
 const express = require('express')
 const Product = require('../models/product')
 const router = new express.Router()
-const auth = require('../middleware/auth')
+const auth = require('../middleware/admin-auth')
 
 /**
  * @route   POST /products

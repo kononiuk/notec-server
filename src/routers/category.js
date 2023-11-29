@@ -1,7 +1,7 @@
 const express = require('express')
 const Category = require('../models/category')
 const router = new express.Router()
-const auth = require('../middleware/auth')
+const auth = require('../middleware/admin-auth')
 
 /**
  * @route   POST /categories

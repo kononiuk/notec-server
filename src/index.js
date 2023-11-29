@@ -1,9 +1,9 @@
 const app = require('./app')
 const Product = require('./models/product')
 const Category = require('./models/category')
-const { currentYear } = require('./helpers/common')
-const productsHelper = require('./helpers/product')
-const categoriesHelper = require('./helpers/category')
+const { currentYear } = require('./utils/common')
+const productsHelper = require('./utils/product')
+const categoriesHelper = require('./utils/category')
 const port = process.env.PORT || 3000
 
 // Define the root route to display home page
