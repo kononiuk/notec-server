@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs')
  * @param {Object} res - Express response object
  * @param {Function} next - Express next middleware function
  */
-const auth = async (req, res, next) => {
+const adminAuth = async (req, res, next) => {
   try{
     // Extract and decode the Base64 encoded Authorization header
     const authorizationHeader = req.header('Authorization');
@@ -39,4 +39,4 @@ const auth = async (req, res, next) => {
   }
 }
 
-module.exports = auth
+module.exports = adminAuth

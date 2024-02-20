@@ -4,6 +4,7 @@ const hbs = require('hbs')
 require('./db/mongoose')
 const productRouter = require('./routers/product')
 const categoryRouter = require('./routers/category')
+const customerRouter = require('./routers/customer')
 const cors = require('cors')
 
 // Create an Express application
@@ -13,7 +14,7 @@ const app = express()
 app.use(express.json())
 
 // Create a custom CORS middleware that allows requests only from localhost
-const allowedOrigins = ['https://app.notec.store','https://react.notec.store']
+const allowedOrigins = process.env.ALLOWED_ORIGINS
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -28,6 +29,7 @@ app.use(cors(corsOptions)) // Apply the custom CORS middleware
 // Register routers for handling different routes
 app.use(productRouter)
 app.use(categoryRouter)
+app.use(customerRouter)
 
 // Define paths for various configuration settings
 const publicDirPath = path.join(__dirname, '../public')

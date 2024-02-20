@@ -130,6 +130,7 @@ dist
 .pnp.*
 
 # Configurations
+.vscode
 config/dev.env
 
 # macOS folder custom attributes file
