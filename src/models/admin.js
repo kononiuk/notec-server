@@ -21,8 +21,38 @@ const adminSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 8
-  }
+  },
+  sessions: [String]
 })
+
+adminSchema.methods.toJSON = function () {
+  const admin = this
+  const adminObject = admin.toObject()
+
+  delete adminObject.password
+
+  return adminObject
+}
+
+adminSchema.statics.findByCredentials = async (email, password) => {
+  const admin = await Admin.findOne({ email })
+
+  if (!admin) {
+    const error = new Error('Unable to login')
+    error.name = 'AuthenticationError'
+    throw error
+  }
+  
+  const isMatch = await bcrypt.compare(password, admin.password)
+
+  if (!isMatch) {
+    const error = new Error('Invalid email or password')
+    error.name = 'AuthenticationError'
+    throw error
+  }
+
+  return admin
+}
 
 // Middleware: Hash the password before saving
 adminSchema.pre('save', async function (next) {
